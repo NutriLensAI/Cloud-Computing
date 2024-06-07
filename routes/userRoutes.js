@@ -73,15 +73,9 @@ router.put('/profile/editemail', authenticateToken, async (req, res) => {
 
 // Update Password
 router.put('/profile/editpassword', authenticateToken, async (req, res) => {
-    const { oldPassword, newPassword } = req.body;
+    const { newPassword } = req.body;
 
     try {
-        const user = await User.findByPk(req.user.id);
-        const validPassword = await bcrypt.compare(oldPassword, user.password);
-        if (!validPassword) {
-            return res.status(400).json({ error: 'Old password is incorrect' });
-        }
-
         const hashedPassword = await bcrypt.hash(newPassword, 10);
         await User.update({ password: hashedPassword }, { where: { id: req.user.id } });
         res.json({ message: 'Password updated successfully' });
