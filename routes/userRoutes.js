@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Update Profile (excluding email and password)
-router.put('/profile', authenticateToken, async (req, res) => {
+router.put('/editprofile', authenticateToken, async (req, res) => {
     const { weight, height, age, gender, activity_level } = req.body;
 
     try {
@@ -55,7 +55,7 @@ router.put('/profile', authenticateToken, async (req, res) => {
 });
 
 // Update Email
-router.put('/profile/email', authenticateToken, async (req, res) => {
+router.put('/profile/editemail', authenticateToken, async (req, res) => {
     const { email } = req.body;
 
     try {
@@ -72,7 +72,7 @@ router.put('/profile/email', authenticateToken, async (req, res) => {
 });
 
 // Update Password
-router.put('/profile/password', authenticateToken, async (req, res) => {
+router.put('/profile/editpassword', authenticateToken, async (req, res) => {
     const { oldPassword, newPassword } = req.body;
 
     try {
