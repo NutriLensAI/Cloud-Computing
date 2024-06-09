@@ -6,12 +6,12 @@ info:
 
     **BASE URL**
     - Local server: `http://localhost:3000/api`
-    - Production server: `https://capstone-nutrilens.et.r.appspot.com/api`
+    - Production server: `https://nutrilens-capstone.et.r.appspot.com/api`
   version: 1.0.0
 servers:
   - url: http://localhost:3000/api
     description: Local server
-  - url: https://capstone-nutrilens.et.r.appspot.com/api
+  - url: https://nutrilens-capstone.et.r.appspot.com/api
     description: Production server
 paths:
   /users/register:
