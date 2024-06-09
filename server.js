@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const sequelize = require('./config/database');
 const userRoutes = require('./routes/userRoutes');
+const nutritionRoutes = require('./routes/nutritionRoutes');
 const swaggerUi = require('swagger-ui-express');
 const fs = require('fs');
 const yaml = require('js-yaml');
@@ -17,6 +18,7 @@ const swaggerDocument = yaml.load(fs.readFileSync('./docs.yaml', 'utf8'));
 app.use('/api/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use('/api/users', userRoutes);
+app.use('/api/nutritions', nutritionRoutes);
 
 sequelize.authenticate()
     .then(() => {

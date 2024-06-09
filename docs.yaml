@@ -92,7 +92,7 @@ paths:
       tags:
         - User
       security:
-        - bearerAuth: []
+        - basicAuth: []
       requestBody:
         required: true
         content:
@@ -139,7 +139,7 @@ paths:
       tags:
         - User
       security:
-        - bearerAuth: []
+        - basicAuth: []
       requestBody:
         required: true
         content:
@@ -180,7 +180,7 @@ paths:
       tags:
         - User
       security:
-        - bearerAuth: []
+        - basicAuth: []
       requestBody:
         required: true
         content:
@@ -221,7 +221,7 @@ paths:
       tags:
         - User
       security:
-        - bearerAuth: []
+        - basicAuth: []
       responses:
         '200':
           description: User profile
@@ -236,12 +236,188 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
+  /data:
+    get:
+      summary: Get all nutrition data
+      tags:
+        - Nutrition
+      responses:
+        '200':
+          description: Nutrition data retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    calories:
+                      type: number
+                    proteins:
+                      type: number
+                    fat:
+                      type: number
+                    carbohydrate:
+                      type: number
+        '500':
+          description: Error reading data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /{table}/food/{id}:
+    post:
+      summary: Add food item to a meal table
+      tags:
+        - Meal
+      security:
+        - basicAuth: []
+      parameters:
+        - in: path
+          name: table
+          required: true
+          schema:
+            type: string
+            enum: [breakfasts, lunchs, dinners]
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          description: Food item added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  food_id:
+                    type: integer
+                  food_name:
+                    type: string
+                  calories:
+                    type: number
+                  proteins:
+                    type: number
+                  fat:
+                    type: number
+                  carbohydrate:
+                    type: number
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /user/foods:
+    get:
+      summary: Get user's food entries in the last 7 hours
+      tags:
+        - Meal
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: User food entries retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Breakfast:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/FoodEntry'
+                      total:
+                        type: object
+                        properties:
+                          Carbs:
+                            type: number
+                          Fat:
+                            type: number
+                          Prot:
+                            type: number
+                          Calories:
+                            type: number
+                  Lunch:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/FoodEntry'
+                      total:
+                        type: object
+                        properties:
+                          Carbs:
+                            type: number
+                          Fat:
+                            type: number
+                          Prot:
+                            type: number
+                          Calories:
+                            type: number
+                  Dinner:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/FoodEntry'
+                      total:
+                        type: object
+                        properties:
+                          Carbs:
+                            type: number
+                          Fat:
+                            type: number
+                          Prot:
+                            type: number
+                          Calories:
+                            type: number
+                  Macros:
+                    type: object
+                    properties:
+                      totalCarbs:
+                        type: number
+                      totalFat:
+                        type: number
+                      totalProteins:
+                        type: number
+                      totalCalories:
+                        type: number
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
 components:
   securitySchemes:
-    bearerAuth:
+    basicAuth:
       type: http
-      scheme: bearer
-      bearerFormat: JWT
+      scheme: basic
   schemas:
     User:
       type: object
@@ -262,6 +438,25 @@ components:
           type: string
         activity_level:
           type: string
+    FoodEntry:
+      type: object
+      properties:
+        id:
+          type: integer
+        user_id:
+          type: integer
+        food_id:
+          type: integer
+        food_name:
+          type: string
+        calories:
+          type: number
+        proteins:
+          type: number
+        fat:
+          type: number
+        carbohydrate:
+          type: number
     Error:
       type: object
       properties:
