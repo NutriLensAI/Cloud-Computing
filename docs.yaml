@@ -236,7 +236,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
-  /data:
+  /nutritions/data:
     get:
       summary: Get all nutrition data
       tags:
@@ -270,7 +270,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
-  /{table}/food/{id}:
+  /nutritions/{table}/food/{id}:
     post:
       summary: Add food item to a meal table
       tags:
@@ -320,7 +320,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
-  /user/foods:
+  /nutritions/user/foods:
     get:
       summary: Get user's food entries in the last 7 hours
       tags:
