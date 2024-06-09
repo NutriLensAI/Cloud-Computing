@@ -11,7 +11,6 @@ require('dotenv').config();
 
 const router = express.Router();
 
-// Get all nutrition data
 router.get('/data', (req, res) => {
     fs.readFile(path.join(__dirname, '../datanutrition.json'), 'utf8', (err, data) => {
         if (err) {
@@ -59,7 +58,6 @@ router.post('/:table/food/:id', authenticateToken, async (req, res) => {
 
         res.status(201).json(Model);
     } catch (error) {
-        // Menangani error jika terjadi
         return res.status(500).send(error);
     }
 });
@@ -152,61 +150,3 @@ router.get('/user/foods', authenticateToken, async (req, res) => {
 });
 
 module.exports = router;
-
-/**
- * {
- *      'breakfast': {
- *          'data' {
- *              {
-            "id": 3,
-            "user_id": 21,
-            "food_id": 203,
-            "calories": 97,
-            "proteins": 5.8,
-            "fat": 6.3,
-            "carbohydrate": 4.2,
-            "food_name": "Cap cai sayur"
-        },
-        {
-            "id": 4,
-            "user_id": 21,
-            "food_id": 504,
-            "calories": 289,
-            "proteins": 38,
-            "fat": 14,
-            "carbohydrate": 0,
-            "food_name": "Ikan Sepat kering"
-        }
- *          },
- *          'total' {
- * }
- *      } 
- *      'lunch': {
- *          ....
- *      } 
- *      'dinner': {
- *          ....
- *      } 
- * }
- * 
- * {
-            "id": 3,
-            "user_id": 21,
-            "food_id": 203,
-            "calories": 97,
-            "proteins": 5.8,
-            "fat": 6.3,
-            "carbohydrate": 4.2,
-            "food_name": "Cap cai sayur"
-        },
-        {
-            "id": 4,
-            "user_id": 21,
-            "food_id": 504,
-            "calories": 289,
-            "proteins": 38,
-            "fat": 14,
-            "carbohydrate": 0,
-            "food_name": "Ikan Sepat kering"
-        }
-*/
