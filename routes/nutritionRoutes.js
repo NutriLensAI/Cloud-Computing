@@ -64,12 +64,15 @@ router.post('/:table/food/:id', authenticateToken, async (req, res) => {
 
 router.get('/user/foods', authenticateToken, async (req, res) => {
     try {
-        const sevenHoursAgo = new Date(Date.now() - 7 * 60 * 60 * 1000);
+        const now = new Date();
+        const startOfDay = new Date(now.setHours(0, 0, 0, 0));
+        const endOfDay = new Date(now.setHours(23, 59, 59, 999));
+
         const breakfasts = await Breakfast.findAll({
             where: {
                 user_id: req.user.id,
                 createdAt: {
-                    [Op.gt]: sevenHoursAgo
+                    [Op.between]: [startOfDay, endOfDay]
                 }
             }
         });
@@ -77,7 +80,7 @@ router.get('/user/foods', authenticateToken, async (req, res) => {
             where: {
                 user_id: req.user.id,
                 createdAt: {
-                    [Op.gt]: sevenHoursAgo
+                    [Op.between]: [startOfDay, endOfDay]
                 }
             }
         });
@@ -85,7 +88,7 @@ router.get('/user/foods', authenticateToken, async (req, res) => {
             where: {
                 user_id: req.user.id,
                 createdAt: {
-                    [Op.gt]: sevenHoursAgo
+                    [Op.between]: [startOfDay, endOfDay]
                 }
             }
         });
