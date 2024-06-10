@@ -64,34 +64,42 @@ router.post('/:table/food/:id', authenticateToken, async (req, res) => {
 
 router.get('/user/foods', authenticateToken, async (req, res) => {
     try {
-        const now = new Date();
-        const startOfDay = new Date(now.setHours(0, 0, 0, 0));
-        const endOfDay = new Date(now.setHours(23, 59, 59, 999));
+        const currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0); // Set to start of the day
+
+        const removeOldEntries = async (model) => {
+            await model.destroy({
+                where: {
+                    user_id: req.user.id,
+                    createdAt: {
+                        [Op.lt]: currentDate
+                    }
+                }
+            });
+        };
+
+        await removeOldEntries(Breakfast);
+        await removeOldEntries(Lunch);
+        await removeOldEntries(Dinner);
 
         const breakfasts = await Breakfast.findAll({
             where: {
-                user_id: req.user.id,
-                createdAt: {
-                    [Op.between]: [startOfDay, endOfDay]
-                }
+                user_id: req.user.id
             }
         });
+
         const lunchs = await Lunch.findAll({
             where: {
-                user_id: req.user.id,
-                createdAt: {
-                    [Op.between]: [startOfDay, endOfDay]
-                }
+                user_id: req.user.id
             }
         });
+
         const dinners = await Dinner.findAll({
             where: {
-                user_id: req.user.id,
-                createdAt: {
-                    [Op.between]: [startOfDay, endOfDay]
-                }
+                user_id: req.user.id
             }
         });
+
         const BreakfastTotalCarbs = breakfasts.reduce((sum, breakfast) => sum + breakfast.carbohydrate, 0);
         const BreakfastTotalFat = breakfasts.reduce((sum, breakfast) => sum + breakfast.fat, 0);
         const BreakfastTotalProt = breakfasts.reduce((sum, breakfast) => sum + breakfast.proteins, 0);
@@ -111,6 +119,7 @@ router.get('/user/foods', authenticateToken, async (req, res) => {
         const totalFat = BreakfastTotalFat + LunchTotalFat + DinnerTotalFat;
         const totalProt = BreakfastTotalProt + LunchTotalProt + DinnerTotalProt;
         const totalCalories = BreakfastTotalCalories + LunchTotalCalories + DinnerTotalCalories;
+
         const modelMerge = {
             'Breakfast': {
                 'data': breakfasts,
@@ -146,10 +155,12 @@ router.get('/user/foods', authenticateToken, async (req, res) => {
                 'totalCalories': totalCalories
             }
         };
+
         res.json(modelMerge);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 });
+
 
 module.exports = router;
