@@ -12113,6 +12113,159 @@
             "carbohydrate": 4,
             "name": "Yoghurt",
             "image": "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2022/08/04071319/Inilah-Alasan-Greek-Yogurt-Menjadi-Cemilan-Sehat.jpg"
-        }
+        },
+        {
+            "id": 1347,
+            "calories": 260,
+            "proteins": 21.93,
+            "fat": 14.55,
+            "carbohydrate": 10.76,
+            "name": "Ayam-Goreng",
+            "image": ""
+          },
+          {
+            "id": 1348,
+            "calories": 202,
+            "proteins": 12.41,
+            "fat": 13.16,
+            "carbohydrate": 7.58,
+            "name": "Bakso",
+            "image": ""
+          },
+          {
+            "id": 1349,
+            "calories": 258,
+            "proteins": 12.8,
+            "fat": 7.8,
+            "carbohydrate": 32.1,
+            "name": "Burger",
+            "image": ""
+          },
+          {
+            "id": 1350,
+            "calories": 201,
+            "proteins": 7.8,
+            "fat": 7.67,
+            "carbohydrate": 25.24,
+            "name": "Ketoprak",
+            "image": ""
+          },
+          {
+            "id": 1351,
+            "calories": 400,
+            "proteins": 10,
+            "fat": 13,
+            "carbohydrate": 61,
+            "name": "Mie-Goreng",
+            "image": ""
+          },
+          {
+            "id": 1352,
+            "calories": 300,
+            "proteins": 7,
+            "fat": 11,
+            "carbohydrate": 43,
+            "name": "Mie-Rebus",
+            "image": ""
+          },
+          {
+            "id": 1353,
+            "calories": 129,
+            "proteins": 2.66,
+            "fat": 0.28,
+            "carbohydrate": 27.9,
+            "name": "Nasi-Putih",
+            "image": ""
+          },
+          {
+            "id": 1354,
+            "calories": 250,
+            "proteins": 9.39,
+            "fat": 9.28,
+            "carbohydrate": 31.38,
+            "name": "Nasi-Goreng",
+            "image": ""
+          },
+          {
+            "id": 1355,
+            "calories": 664,
+            "proteins": 70,
+            "fat": 15,
+            "carbohydrate": 70,
+            "name": "Nasi-Padang",
+            "image": ""
+          },
+          {
+            "id": 1356,
+            "calories": 260,
+            "proteins": 40.7,
+            "fat": 12.95,
+            "carbohydrate": 32.84,
+            "name": "Nasi-Uduk",
+            "image": ""
+          },
+          {
+            "id": 1357,
+            "calories": 266,
+            "proteins": 7.64,
+            "fat": 3.29,
+            "carbohydrate": 50.61,
+            "name": "Roti-Putih",
+            "image": ""
+          },
+          {
+            "id": 1358,
+            "calories": 225,
+            "proteins": 19.54,
+            "fat": 14.82,
+            "carbohydrate": 4.87,
+            "name": "Sate-Ayam",
+            "image": ""
+          },
+          {
+            "id": 1359,
+            "calories": 312,
+            "proteins": 24,
+            "fat": 14.92,
+            "carbohydrate": 19.55,
+            "name": "Soto",
+            "image": ""
+          },
+          {
+            "id": 1360,
+            "calories": 271,
+            "proteins": 17.19,
+            "fat": 20.18,
+            "carbohydrate": 10.49,
+            "name": "Tahu-Goreng",
+            "image": ""
+          },
+          {
+            "id": 1361,
+            "calories": 253,
+            "proteins": 16.89,
+            "fat": 11.16,
+            "carbohydrate": 25.68,
+            "name": "Tahu-Telur",
+            "image": ""
+          },
+          {
+            "id": 1362,
+            "calories": 92,
+            "proteins": 6.27,
+            "fat": 0.4,
+            "carbohydrate": 7.04,
+            "name": "Telur-Ceplok",
+            "image": ""
+          },
+          {
+            "id": 1363,
+            "calories": 34,
+            "proteins": 2,
+            "fat": 2.28,
+            "carbohydrate": 1.79,
+            "name": "Tempe-Goreng",
+            "image": ""
+          }
     ]
 }
