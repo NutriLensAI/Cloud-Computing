@@ -12116,6 +12116,15 @@
         },
         {
             "id": 1347,
+            "calories": 321,
+            "proteins": 37,
+            "fat": 12,
+            "carbohydrate": 16,
+            "name": "Ayam-Geprek",
+            "image": ""
+          },
+          {
+            "id": 1348,
             "calories": 260,
             "proteins": 21.93,
             "fat": 14.55,
@@ -12124,7 +12133,7 @@
             "image": ""
           },
           {
-            "id": 1348,
+            "id": 1349,
             "calories": 202,
             "proteins": 12.41,
             "fat": 13.16,
@@ -12133,7 +12142,7 @@
             "image": ""
           },
           {
-            "id": 1349,
+            "id": 1350,
             "calories": 258,
             "proteins": 12.8,
             "fat": 7.8,
@@ -12142,7 +12151,7 @@
             "image": ""
           },
           {
-            "id": 1350,
+            "id": 1351,
             "calories": 201,
             "proteins": 7.8,
             "fat": 7.67,
@@ -12151,7 +12160,16 @@
             "image": ""
           },
           {
-            "id": 1351,
+            "id": 1352,
+            "calories": 270,
+            "proteins": 7,
+            "fat": 11.31,
+            "carbohydrate": 37.37,
+            "name": "Martabak-Manis (1 Potong)",
+            "image": ""
+          },
+          {
+            "id": 1353,
             "calories": 400,
             "proteins": 10,
             "fat": 13,
@@ -12160,7 +12178,7 @@
             "image": ""
           },
           {
-            "id": 1352,
+            "id": 1354,
             "calories": 300,
             "proteins": 7,
             "fat": 11,
@@ -12169,7 +12187,7 @@
             "image": ""
           },
           {
-            "id": 1353,
+            "id": 1355,
             "calories": 129,
             "proteins": 2.66,
             "fat": 0.28,
@@ -12178,7 +12196,16 @@
             "image": ""
           },
           {
-            "id": 1354,
+            "id": 1356,
+            "calories": 500,
+            "proteins": 25,
+            "fat": 20,
+            "carbohydrate": 30,
+            "name": "Nasi-Ayam-Goreng",
+            "image": ""
+          },
+          {
+            "id": 1357,
             "calories": 250,
             "proteins": 9.39,
             "fat": 9.28,
@@ -12187,7 +12214,7 @@
             "image": ""
           },
           {
-            "id": 1355,
+            "id": 1358,
             "calories": 664,
             "proteins": 70,
             "fat": 15,
@@ -12196,7 +12223,7 @@
             "image": ""
           },
           {
-            "id": 1356,
+            "id": 1359,
             "calories": 260,
             "proteins": 40.7,
             "fat": 12.95,
@@ -12205,7 +12232,25 @@
             "image": ""
           },
           {
-            "id": 1357,
+            "id": 1360,
+            "calories": 292,
+            "proteins": 23,
+            "fat": 17.22,
+            "carbohydrate": 11.9,
+            "name": "Nasi-Pecel-Lele",
+            "image": ""
+          },
+          {
+            "id": 1361,
+            "calories": 426,
+            "proteins": 17.34,
+            "fat": 19.13,
+            "carbohydrate": 52.62,
+            "name": "Pecel-Sayur",
+            "image": ""
+          },
+          {
+            "id": 1362,
             "calories": 266,
             "proteins": 7.64,
             "fat": 3.29,
@@ -12214,7 +12259,7 @@
             "image": ""
           },
           {
-            "id": 1358,
+            "id": 1363,
             "calories": 225,
             "proteins": 19.54,
             "fat": 14.82,
@@ -12223,7 +12268,7 @@
             "image": ""
           },
           {
-            "id": 1359,
+            "id": 1364,
             "calories": 312,
             "proteins": 24,
             "fat": 14.92,
@@ -12232,7 +12277,7 @@
             "image": ""
           },
           {
-            "id": 1360,
+            "id": 1365,
             "calories": 271,
             "proteins": 17.19,
             "fat": 20.18,
@@ -12241,7 +12286,7 @@
             "image": ""
           },
           {
-            "id": 1361,
+            "id": 1366,
             "calories": 253,
             "proteins": 16.89,
             "fat": 11.16,
@@ -12250,7 +12295,7 @@
             "image": ""
           },
           {
-            "id": 1362,
+            "id": 1367,
             "calories": 92,
             "proteins": 6.27,
             "fat": 0.4,
@@ -12259,12 +12304,21 @@
             "image": ""
           },
           {
-            "id": 1363,
+            "id": 1368,
             "calories": 34,
             "proteins": 2,
             "fat": 2.28,
             "carbohydrate": 1.79,
             "name": "Tempe-Goreng",
+            "image": ""
+          },
+          {
+            "id": 1369,
+            "calories": 330,
+            "proteins": 22,
+            "fat": 23,
+            "carbohydrate": 9,
+            "name": "Ayam-kentucky",
             "image": ""
           }
     ]
