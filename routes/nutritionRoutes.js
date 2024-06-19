@@ -7,6 +7,7 @@ const Breakfast = require('../models/breakfastsModel');
 const Lunch = require('../models/lunchsModel');
 const Dinner = require('../models/dinnersModel');
 const { Op } = require('sequelize');
+const moment = require('moment-timezone');
 require('dotenv').config();
 
 const router = express.Router();
@@ -64,8 +65,7 @@ router.post('/:table/food/:id', authenticateToken, async (req, res) => {
 
 router.get('/user/foods', authenticateToken, async (req, res) => {
     try {
-        const currentDate = new Date();
-        currentDate.setHours(0, 0, 0, 0); // Set to start of the day
+        const currentDate = moment.tz('Asia/Jakarta').startOf('day').toDate(); 
 
         const removeOldEntries = async (model) => {
             await model.destroy({
