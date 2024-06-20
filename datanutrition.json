@@ -6859,15 +6859,6 @@
             "image": "https://kopijagung.com/wp-content/uploads/2021/05/0001-1776641472_20210524_095708_0000_compress85-scaled.jpg"
         },
         {
-            "id": 763,
-            "calories": 153,
-            "proteins": 7.9,
-            "fat": 7.7,
-            "carbohydrate": 13,
-            "name": "Ketoprak",
-            "image": "https://asset.kompas.com/crops/BiN_oCxCDgkO09b1B_FPfZuvGBw=/0x0:739x493/750x500/data/photo/2020/01/29/5e318845429db.jpg"
-        },
-        {
             "id": 764,
             "calories": 404,
             "proteins": 14.1,
@@ -12152,12 +12143,12 @@
           },
           {
             "id": 1351,
-            "calories": 201,
-            "proteins": 7.8,
-            "fat": 7.67,
-            "carbohydrate": 25.24,
+            "calories": 402,
+            "proteins": 15.59,
+            "fat": 15.34,
+            "carbohydrate": 50.48,
             "name": "Ketoprak",
-            "image": ""
+            "image": "https://asset.kompas.com/crops/BiN_oCxCDgkO09b1B_FPfZuvGBw=/0x0:739x493/750x500/data/photo/2020/01/29/5e318845429db.jpg"
           },
           {
             "id": 1352,
