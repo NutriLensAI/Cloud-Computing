@@ -322,7 +322,7 @@ paths:
 
   /nutritions/user/foods:
     get:
-      summary: Get user's food entries in the last 7 hours
+      summary: Get user food entries in the last 24 hours
       tags:
         - Nutrition
       security:
